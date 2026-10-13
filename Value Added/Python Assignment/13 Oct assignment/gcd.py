@@ -1,7 +1,10 @@
-def gcdOfTwoNumbers(n1, n2):
-    while n2 != 0:
-        rem = n1% n2 
-        n1 = n2 
-        n2 = rem
-    return n1
+def Lcm(n1, n2):
+    a =n1
+    b =n2
+    while b != 0:
+        rem = a % b
+        a =  b
+        b = rem
+    return (n1*n2)//a
+    
     pass
