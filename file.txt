@@ -1,0 +1,5 @@
+
+ Now this is the new last line 
+ multiple lines 
+ can be added 
+ using write line method
