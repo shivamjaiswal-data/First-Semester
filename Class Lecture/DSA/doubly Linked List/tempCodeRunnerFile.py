@@ -1,0 +1,1 @@
+list.insert(node(512),1)
