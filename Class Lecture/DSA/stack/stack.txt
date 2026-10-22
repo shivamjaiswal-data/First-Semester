@@ -1,0 +1,20 @@
+Stack : - 
+stack is linear daata structure which operates un LIFO manner 
+the top pointer provides top value of the stack 
+
+
+
+
+Application :- 
+ 1) Function call 
+ 2) recursion 
+ 3) Arithmatic Operation
+ 4) Syntax parsing
+ 5) Memory management
+ 5) Backtracking
+
+ Queue : - A queue is linear data structure which follows a particular idea 
+
+
+
+ 
