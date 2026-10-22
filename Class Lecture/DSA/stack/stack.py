@@ -56,3 +56,4 @@ st.printstack()
 
 print("Reversed Stack:")
 st1.printstack()
+
