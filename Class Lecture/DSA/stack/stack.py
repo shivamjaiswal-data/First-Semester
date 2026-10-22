@@ -27,14 +27,32 @@ class stack :
             print("Stack contains ......")
             temp =  self.top
             while temp :
-                print(temp.data)
+                # print(temp.data)
+                # prev = temp
+                st1.push(node(temp.data))
                 temp  = temp.next
+            # return prev
+            
+    # def reverse (self,st1):
+    #     temp = self.top
+    #     while temp :
+    #         st1.push(node(temp.data))
+    #         temp  = temp.next
+
 
 st = stack()
+st1 =stack()
 st.push(node(10))
 st.push(node(20))
 st.push(node(30))
 st.push(node(40))
 st.push(node(50))
-st.pop()
+# st.pop()
+
+print("Original Stack:")
 st.printstack()
+
+# st.reverse(st1)
+
+print("Reversed Stack:")
+st1.printstack()
