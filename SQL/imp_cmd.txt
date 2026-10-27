@@ -1,0 +1,237 @@
+ create database User ;
+show databases;
+use User;
+
+Create table customer (custid int, custname varchar(25) , city varchar(25), product varchar(15),price int);
+
+desc customer; 
+
+Insert into customer values (103 ,"Vikas" , "Nagpur" ,"Tv" ,12000),
+(104 ,"Rahul" , "Varanasi" ,"Air Conditioner" ,35000);
+
+select*from customer;
+Alter table customer add  primary key(custid);
+select custid,custname,city from customer;
+select* from customer where custid=102 ;
+Select*from customer where custid = 101 or custid = 102;
+
+
+
+-- I will create clone of that table 
+create table clonetable as select*from customer;
+select*from clonetable;
+drop table clonetable;
+
+
+select custname, product, price from customer where price > 1500;
+select * from customer where custid = 1 ;
+select * from customer where city = 'varanasi';
+
+select * from customer order by price ;
+select * from customer order by price desc ;
+
+-- Sorting data order by many coloumns 
+select * from customer order by city,price;
+
+-- Sorting data order by many coloumns by ascending order of price and descending order of city 
+select*from customer order by city desc, price asc;
+
+
+
+select upper(custname), lower(product) from customer where custid< 103;   /* uppercase & lower case */ 
+-- inserting a coloumn name and add its values 
+alter table customer add lastname varchar(25);
+
+
+update customer set lastname  = "Jaiswal" where custid = 101 ;
+update customer set lastname  = "Sharma" where custid = 102 ;
+select*from customer;
+
+-- concating the comlmn values 
+select concat(custname,' ',lastname) from customer where custid = 101; 
+
+select concat(custname,' ',lastname)  as FuLLNAme from customer ;
+
+-- Use of SUBSTR and INSTR functions 
+select*from customer ;
+select substr(custname,1,3) from customer;
+select substr(custname,1,0) from customer;
+select substr(custname,0,1) from customer;
+
+/* substring Query */
+
+select instr(lastname , 'a') as position from customer ; 
+
+
+select substr(custname,1,2) as substr ,
+instr(lastname,'j') as instr from customer ; /* SUBSTR and INSTR functions*/
+
+
+select substr(custname,1,2) as substr ,
+instr(lastname,'j') as instr from customer where custid< 103 ;
+
+
+-- Date  and time 
+select now ();
+
+select now() as current_datetime;
+
+alter table customer add column date date;
+
+update customer set  date = '2024/2/20' where custid = 1;
+update customer set date = '2024-2-24'  where custid = 2;
+
+
+select * from customer ;
+
+/* Filtering data from tables */
+-- Where ,select dustinct ,and , or ,not , in 
+
+
+create database organization;
+use organization ;
+
+create table employee (  empid int not null primary key ,
+first_name varchar(50),last_name varchar(50) ,
+Gender char , Role varchar(50) , Dept varchar (50), manager_id varchar(50));
+
+
+
+insert into employee values ( 101 , 'Shradha','sharma', 'M', 'Team Leader','Retail','M11'),
+( 102 , 'shivam','jaiswal', 'M', 'Manager','Finance','M12'),
+( 103 , 'Vikas', 'sharma','M', 'President','HR','M13'),
+( 104 , 'Rahul','Yadav', 'M', 'Manager','Finance','M14'),
+( 105 , 'shaurabh','jaiswal', 'M', 'Team Leader','Retail','M15');
+
+
+-- select distinct key word 
+-- the distinct clause in the select stattement is used to eliminate duplicate rows from the result set that may be produced while quering dataa frpm a table
+-- when using the distic clause to provide a colmn with  null value
+-- the distinct clause will only preserve one null value since
+-- it consider all null value to be the same 
+
+select distinct dept from employee order by Dept;
+
+select distinct Role from employee order by Role ;
+
+/* And operator is logical operater taht combined two or more booleaan expression and 
+return 0 and 1 or null . the AND operator is used for  filtering data with the WHERE clause */
+select * from employee where role  = 'President' and dept = 'HR';
+
+/* OR operator : the or operator is a logical operator that combines  two boolean expression and return 1 (true ) is either of the expression is true 
+thr OR operator is used for filtering data with WHere clause */
+
+Select * from employee where  role = 'Manager' or Dept = 'Finance';
+
+
+/* In operator : the in operator is used for determiine if a val matches any other val in a lis 
+*/
+
+select * from  employee where role in ('President','Manager');
+select * from  employee where role in ('HR','Finance');
+
+select * from  employee where role in ('TM','CEo');
+
+
+/* The not in operator , in contrast to the in operator ,
+is used to determine is a val does not match any of val in that list */
+
+
+Select * from employee where role not in ('President','HR');
+
+/* Between operator : between operator is a logical operator that determAIBNE WHETHER A VAL BELONGS IN A RANGE  ,the between operator return null 
+if the val low, high is null */
+alter table  employee add column Exprience int ;
+update employee set Exprience = 8 where empid = 101;
+update employee set Exprience = 4 where empid = 102;
+update employee set Exprience = 5 where empid = 103;
+update employee set Exprience = 2 where empid = 104;
+update employee set Exprience = 4 where empid = 105;
+
+
+select * from employee;
+
+select * from employee where Exprience between 6 and 10 ; -- Between operator 
+select * from employee where Exprience = 5  or Exprience=  8;
+
+/* Like operator : like operator is logical operator that combines whether or not a string contains a specified  
+patter*/
+
+select * from employee where last_name like 'J%' ;
+
+/* Limit operator : the limit clause in the select staterment is use to limit the number of row and retirnef*/
+
+
+select * from employee;
+
+select * from employee order by Exprience limit 5; -- limite the number of  row to 5 
+ /* is null : the us null operator determine whether or no val is null  the expression retirns 2 is the val is null 
+ otherwise it returns 0(false */
+ 
+ insert into employee values (7,'Asha' , 'Joshi', 'F','President','HR',' ' ,null);
+ 
+ 
+ select * from employee where manager_id is null ;
+ 
+ 
+ 
+ --  Agrrewgate function  
+ /* COUNT ,SUM ,AVG, MIN, MAX */
+ use organization;
+select count(*) from employee;
+  
+select count(empid) from employee where dept = 'Finance';  -- count
+  
+select Min(Exprience) from employee ; -- minimum
+select Max(Exprience) from employee ; -- Maximum
+select Sum(Exprience) from employee ; -- Sum
+Select Avg(Exprience) as emp_exr from employee;-- Avg
+
+select * from employee;
+
+/* Group By clause - group by clause devides a  set of rows into subgroups depending  on clmn or expression 
+values the group by clause is used with aggegate func such as SUM AVG MAX MIN AND COUNT */
+
+-- find the DEPT wise employee count 
+Select dept,count(*) as employee_count
+from employee GROUP BY DEPT;
+
+
+-- find the Role wise employee count 
+Select ROLE,count(*) as employee_count
+from employee GROUP BY ROLE;
+
+-- find the Gender wise employee count  
+Select Gender,count(*) as employee_count
+from employee GROUP BY Gender;
+Select * from employee;
+
+
+/* Having clause -- each grp produced by the grp by clause  is evaluated by the having clause ,
+and if the result is true , the row is included in the result set */
+-- the having clause was added to sql coz the where clause csn not be used with AGGREGATE function 
+/* RETAIL -
+FINANCE -
+HR -    */
+
+SELECT * FROM employee;
+SELECT Dept ,SUM(Exprience) AS total_exprience
+FROM employee group by Dept
+HAVING total_exprience >= 10 AND total_exprience <= 20;
+
+SELECT*FROM employee;
+
+SELECT Role ,SUM(Exprience) AS total_exprience
+FROM employee group by Role
+HAVING total_exprience >= 10 AND total_exprience <= 20 ;
+
+
+SELECT Dept ,SUM(Exprience) AS total_exp from employee GROUP BY Dept 
+HAVING total_exp >= 10 OR total_exp <= 30 ;
+
+
+
+
+
+
+
