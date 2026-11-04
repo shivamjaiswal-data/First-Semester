@@ -32,5 +32,5 @@ orders = [
 ]
 
 def top_products(orders):
-    
+    orders
 
