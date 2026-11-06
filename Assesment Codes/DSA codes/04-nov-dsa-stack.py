@@ -67,5 +67,5 @@ q1.display()
 print("\nAfter Dequeue:")
 q1.dequeue()
 
-# Display Updated Queue
+# Display Updated Queu
 q1.display()
