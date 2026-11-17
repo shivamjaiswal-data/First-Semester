@@ -25,4 +25,5 @@ class SinglyLinkedList():
 ob = SinglyLinkedList()
 ob.InsertAtend(12)
 ob.InsertAtend(13)
+ob.InsertAtend(14)
 ob.printLL()

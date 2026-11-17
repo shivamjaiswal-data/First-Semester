@@ -1,0 +1,4 @@
+print(min)
+
+
+# mylst.reverse()
