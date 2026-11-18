@@ -1,0 +1,65 @@
+APPLICATION OF TREE DATA STRUCTURE :
+file system data organization 
+database 
+
+
+
+
+
+
+Terminology :
+Root : - in a Tree data structure . the first 
+
+Edge :-
+ in a tree dsa , the connecting link between any two nodes is called as edge 
+
+siblings :- 
+in tree dsa , nodes which belong to same person are called as sibling 
+in any tree the nodes which has same person are callled as sibling 
+
+Degree of node :
+ the total number of children of a nodes is called as a 
+
+terminal node /leaf node : 
+ the node which doeas not have child is called as leaf or terminal node and a node without successor is called  a leaf node 
+
+Non terminal node :
+
+
+hieght :
+ total number of edges from leaf node to a particular node in the longest path is called as Hieght of a that node 
+
+ in any trre hieght of node ia total number of leaf node 
+
+ sub tree :
+  each child from a node forms a subtree recursively , every child node will form a subtree on its parent node
+
+Path :
+ the sequence of nodes and edges from one node to another node is called as Path between those two nodes 
+
+ in any tree 
+
+
+Level : in a tree dsa ,the root node is said to be at level 0 and the children of root node are at level 1 and thr children of 
+
+
+Binary tree :
+A binary tree is eitjer an empty tree or binary tree consist of a root node ,a left subtree and a right subtree ,both of which will act as a binary tree once again 
+
+
+strict Binary tree :
+Strictly binary 
+
+
+Comletely Binary tree : A com binary tree is a strictly binary tree in which all leaf nodes are at the same level 
+
+Types of tree : 
+A Binary Search Tree :
+it is a tree in which all nodes follow the below-mentioned properties - 
+
+the left subtree of a node has a value less than its parents node's val 
+the right sub-tree of a node has value greater than or equal to parents node
+ all sub tree follow above two rule 
+
+
+
