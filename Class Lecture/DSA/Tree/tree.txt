@@ -63,3 +63,10 @@ the right sub-tree of a node has value greater than or equal to parents node
 
 
 
+Q1 : Construct BST with following elements and write traversal 75 ,34,45,62,22,96,82,105,98,25
+
+Q2 : Construct BST with following elements and write traversal ['jan,'feb','march','april','may','June','July','August','Sept','Octo','Nov','Dec']
+
+Q3 : a,b,c ........x,y,z
+
+  
