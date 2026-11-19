@@ -25,13 +25,23 @@ class BST:
 
 
 
+# btree = BST()
+# btree.insert(node(10))
+# btree.insert(node(20))
+# btree.insert(node(3))
+# btree.insert(node(17))
+# btree.insert(node(40))
+# btree.iinorder()
+
+
 btree = BST()
+
+
+
+
 btree.insert(node(10))
 btree.insert(node(20))
 btree.insert(node(3))
 btree.insert(node(17))
 btree.insert(node(40))
 btree.iinorder()
-
-
-
