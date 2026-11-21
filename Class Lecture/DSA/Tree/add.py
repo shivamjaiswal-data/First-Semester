@@ -72,11 +72,15 @@
 #         total  = total+ i 
 #     return total
 # print(show(*num1))
-n  = 5
-for i in range(n):
-    for j in range (n):
-        print("*",end = "")
-    print()
+# n  = 5
+# for i in range(n):
+#     for j in range (n):
+#         print("*",end = " ")
+# #     print()
 
 
-    
+# for i in range (5):
+#     print("*"*4 , end  = "")
+
+
+for i in range (muuuuuuuu)
