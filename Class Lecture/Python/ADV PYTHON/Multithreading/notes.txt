@@ -1,0 +1,30 @@
+A thread is lighweight process that performs a specific task within a program 
+A thread is the smallest unit of execution is a process .multiple threads in a progress share the same code and global data but maintain their own stack 
+multiple threading allows you  to run multiplwe thread in a progress ,which is also known the  thread based parallelism
+multithreading is a technique that allows a program to execute multiple threads 
+
+
+
+THreds life cycle of in Python :
+1):- 
+NEW {a thread is created but nnot yet statrdted , it has been allocated resources }
+ --> Running{A thread is started and currently exectuing its code 
+ }--> Block {A thread is waiting for an event or condition to occure ,such as waiting for I/o 
+}--> Terminated{A thread is complete its Executuion}
+
+Key Function :
+start ()--> Begin thread Executuion
+
+sleep()--> Pause thread 
+
+0Join()--> Wait for thread 
+Thread()--> create thread
+
+
+Sleep and Join 
+
+sleep():- Pause a current thread ,takes  time as argument ,used for delay 
+join ()--> waits for another thread ,takes a thrrad object,
+used for synchronized 
+
+
