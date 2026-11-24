@@ -6,7 +6,7 @@ multithreading is a technique that allows a program to execute multiple threads
 
 
 THreds life cycle of in Python :
-1):- 
+(1):- 
 NEW {a thread is created but nnot yet statrdted , it has been allocated resources }
  --> Running{A thread is started and currently exectuing its code 
  }--> Block {A thread is waiting for an event or condition to occure ,such as waiting for I/o 
@@ -28,3 +28,28 @@ join ()--> waits for another thread ,takes a thrrad object,
 used for synchronized 
 
 
+Lock:-  Create lock (), 
+acquire(){if the lock is free , the thread acquire it , if anothewr holds it ,the thread waits },
+release(){ lock.release  : other waiting threads can now acquire thr lock }
+
+
+WOrking of Lock : - thread 1 --> acquire() , critical section --> release()
+thread 2 : - waits lock is released 
+thres 3  : - acquire ( -->) critical section --> release ()
+Adv 
+prevents race cndtion 
+ensure data consistency 
+provide thread synchronization 
+
+
+
+
+Assignment : -  
+
+
+
+multithreading Vs Asyncio :-- 
+
+Feature              multithreading                      Asyncio
+Workers              multiple threads                    Usually one thrrad
+uses                 threding 
