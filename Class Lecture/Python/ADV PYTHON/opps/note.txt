@@ -1,0 +1,41 @@
+Claas and object :
+
+crate class 
+class myclass 
+x = 5 
+
+
+create object 
+p1 = myclass()
+print(p1.x)
+
+
+class 
+Atrributes - associated with value 
+Methods -- functions 
+
+__init__ (self)-constructor 
+
+__init__() is called automatically when an object is created 
+it is used to intitated object attributes 
+self refers to the current object
+Every object gets itrs own copy of instancr of its constructor 
+
+
+Types of data member 
+Instance data member: 
+declare using self , each ob gets its own copy 
+change in one ob do not affect other pbject
+
+class Data member:
+declare inside the class but outside metyhod 
+shared all ob the class 
+only one copy exist
+
+
+Private data members:
+
+begin with double underscore (__)
+can not directly accessed outside of the class 
+Used for data hiding anf encapsulation 
+
